@@ -40,7 +40,7 @@ Resume-Skill-Matcher/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/Resume-Skill-Matcher.git
+git clone https://github.com/Kaaviyaa-Shree/Resume-Skill-Matcher.git
 ```
 
 ### 2️⃣ Navigate to the project folder
