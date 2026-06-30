@@ -125,6 +125,20 @@ if st.button("🔍 Check Match"):
         st.metric(label="🔹 Skill Match Percentage", value=f"{match_percentage}%")
         matched_skills, missing_skills = extract_skills(clean_resume, clean_jd)
         st.subheader("Skill Analysis")
+        st.write("### ✅ Matched Skills")
+        if matched_skills:
+            for skill in matched_skills:
+                st.success(skill)
+        else:
+            st.info("No matched skills found.")
+
+        st.write("### ❌ Missing Skills")
+
+        if missing_skills:
+            for skill in missing_skills:
+                st.error(skill)
+        else:
+            st.success("No missing skills!")
     else:
         st.warning("Please paste both Resume and Job Description.")
 

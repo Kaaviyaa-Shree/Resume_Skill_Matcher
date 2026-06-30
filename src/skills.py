@@ -1,8 +1,10 @@
+from src.skill_database import SKILLS
+
 def extract_skills(resume, jd):
-    resume_words = set(resume.split())
-    jd_words = set(jd.split())
+    resume_skills = {skill for skill in SKILLS if skill in resume}
+    jd_skills = {skill for skill in SKILLS if skill in jd}
 
-    matched_skills = resume_words.intersection(jd_words)
-    missing_skills = jd_words.difference(resume_words)
+    matched_skills = resume_skills.intersection(jd_skills)
+    missing_skills = jd_skills.difference(resume_skills)
 
-    return list(matched_skills), list(missing_skills)
+    return sorted(matched_skills), sorted(missing_skills)

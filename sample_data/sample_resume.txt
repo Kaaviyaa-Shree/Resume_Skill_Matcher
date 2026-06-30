@@ -1,0 +1,30 @@
+KAAVIYAA SHREE S
+
+Email: kaaviyaa@example.com
+Phone: +91 0000000000
+
+SUMMARY
+Motivated Artificial Intelligence and Data Science student with knowledge of machine learning, data analysis, and software development. Passionate about solving real-world problems using Python.
+
+TECHNICAL SKILLS
+Python
+Java
+SQL
+Git
+GitHub
+HTML
+CSS
+JavaScript
+Pandas
+NumPy
+Scikit-learn
+Machine Learning
+Streamlit
+
+PROJECTS
+• Resume Skill Matcher
+• Tamil Dialect Classification
+• Musical Instrument Recognition System
+
+EDUCATION
+B.Tech Artificial Intelligence and Data Science

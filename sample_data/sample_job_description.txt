@@ -1,0 +1,11 @@
+Software Developer Intern
+
+Requirements
+
+• Strong knowledge of Python and SQL.
+• Experience with Git and GitHub.
+• Familiarity with Pandas, NumPy, and Scikit-learn.
+• Knowledge of Machine Learning concepts.
+• Experience with Streamlit is preferred.
+• Basic understanding of HTML, CSS, and JavaScript.
+• Good communication and problem-solving skills.
