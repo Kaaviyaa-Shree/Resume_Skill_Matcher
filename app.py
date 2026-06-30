@@ -1,8 +1,7 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 from src.preprocessing import clean_text
 import streamlit as st
 from src.skills import extract_skills
+from src.matcher import calculate_match_percentage
 st.set_page_config(page_title="Resume Skill Matcher", layout="centered")
 st.markdown(
     """
@@ -114,16 +113,13 @@ if st.button("🔍 Check Match"):
     if resume_text and jd_text:
         clean_resume = clean_text(resume_text)
         clean_jd = clean_text(jd_text)
-        #st.subheader("Cleaned Text Preview")
-        #st.write("Resume:", clean_resume[:300])
-        #st.write("Job Description:", clean_jd[:300])
-        vectorizer = TfidfVectorizer()
-        tfidf_matrix = vectorizer.fit_transform([clean_resume, clean_jd])
-        #st.write("TF-IDF shape:", tfidf_matrix.shape)
-        similarity_score = cosine_similarity(tfidf_matrix[0:1],tfidf_matrix[1:2])[0][0]
-        match_percentage = round(similarity_score * 100, 2)
-        st.metric(label="🔹 Skill Match Percentage", value=f"{match_percentage}%")
         matched_skills, missing_skills = extract_skills(clean_resume, clean_jd)
+        jd_skills = matched_skills + missing_skills
+        match_percentage = calculate_match_percentage(
+            matched_skills,
+            jd_skills
+        )
+        st.metric(label="🔹 Skill Match Percentage", value=f"{match_percentage}%")
         st.subheader("Skill Analysis")
         st.write("### ✅ Matched Skills")
         if matched_skills:
