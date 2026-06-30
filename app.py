@@ -1,18 +1,8 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import re
-def clean_text(text):
-    text = text.lower()
-    text = re.sub(r'[^a-z\s]', '', text)
-    text = re.sub(r'\s+', ' ', text)
-    return text.strip()
-def extract_skills(resume, jd):
-    resume_words = set(resume.split())
-    jd_words = set(jd.split())
-    matched_skills = resume_words.intersection(jd_words)
-    missing_skills = jd_words.difference(resume_words)
-    return list(matched_skills), list(missing_skills)
+from src.preprocessing import clean_text
 import streamlit as st
+from src.skills import extract_skills
 st.set_page_config(page_title="Resume Skill Matcher", layout="centered")
 st.markdown(
     """
